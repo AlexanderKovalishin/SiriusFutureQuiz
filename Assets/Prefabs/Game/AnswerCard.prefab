@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boolParameter: Visible
+  _defaultState: Hidden
 --- !u!114 &1809181285200055672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boolParameter: Opened
+  _defaultState: Hidden
 --- !u!1 &8442176990741209604
 GameObject:
   m_ObjectHideFlags: 0

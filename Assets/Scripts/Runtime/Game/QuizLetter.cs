@@ -9,9 +9,7 @@ namespace SiriusFuture.Quiz.Game
         IShow, 
         IHide,
         IGetInstanceFromPoolListener,
-        IPointerClickHandler, 
-        IPointerEnterHandler, 
-        IPointerExitHandler
+        IPointerClickHandler
     {
         [SerializeField] private TMP_Text _text;
         [SerializeField] private QuizLetterAnimator _animator;
@@ -32,14 +30,6 @@ namespace SiriusFuture.Quiz.Game
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
         {
             Click?.Invoke(this);
-        }
-
-        void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
-        {
-        }
-
-        void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
-        {
         }
 
         public void Show()

@@ -8,7 +8,8 @@ namespace SiriusFuture.Quiz.Game
     public class UIQuizGameOverDialog : Dialog<VoidType, VoidType>
     {
         [SerializeField] private Button _okButton;
-
+        [SerializeField] private AudioSource _clickAudio;
+        
         protected override void Awake()
         {
             base.Awake();
@@ -16,6 +17,7 @@ namespace SiriusFuture.Quiz.Game
         }
         private void OkButtonOnClick()
         {
+            _clickAudio.Play();
             Complete(VoidType.Empty);
         }
     }

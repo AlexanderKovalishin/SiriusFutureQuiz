@@ -9,6 +9,7 @@ namespace SiriusFuture.Quiz.Game
     {
         [SerializeField] private QuizAnswerLetterPool _lettersPool;
         [SerializeField] private QuizAnswerAnimator _answerAnimator;
+        [SerializeField] private MultiAudio _audio;
         [SerializeField] private DistributorX _distributor;
         [SerializeField] private RandomizeRotationZ _rotation;
 
@@ -31,6 +32,7 @@ namespace SiriusFuture.Quiz.Game
             _distributor.Distribute(_letters);
             _rotation.Apply(_letters);
             _answerAnimator.Show(_letters);
+            _audio.Play();
         }
 
         public bool IsComplete()
@@ -54,6 +56,7 @@ namespace SiriusFuture.Quiz.Game
 
         public void HideAllLetters()
         {
+            _audio.Play();
             _answerAnimator.Hide(_letters);
         }
     }

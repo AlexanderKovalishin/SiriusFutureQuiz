@@ -11,6 +11,7 @@ namespace SiriusFuture.Quiz.Game
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private string _scoreFormat = "Score: {0}";
         [SerializeField] private Button _okButton;
+        [SerializeField] private AudioSource _clickAudio;
 
         protected override void Awake()
         {
@@ -26,6 +27,7 @@ namespace SiriusFuture.Quiz.Game
 
         private void OkButtonOnClick()
         {
+            _clickAudio.Play();
             Complete(VoidType.Empty);
         }
     }
