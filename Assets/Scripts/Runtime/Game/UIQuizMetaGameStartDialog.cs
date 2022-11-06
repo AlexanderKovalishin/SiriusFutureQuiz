@@ -9,11 +9,18 @@ namespace SiriusFuture.Quiz.Game
     {
         [SerializeField] private Button _startGameButton;
         [SerializeField] private AudioSource _clickAudio;
+        [SerializeField] private TriggerAnimator _intro;
 
         protected override void Awake()
         {
             base.Awake();
             _startGameButton.onClick.AddListener(StartGameButtonOnClick);
+        }
+
+        protected override void OnShow(VoidType args)
+        {
+            base.OnShow(args);
+            _intro.ResetAnimator();
         }
 
         private void StartGameButtonOnClick()

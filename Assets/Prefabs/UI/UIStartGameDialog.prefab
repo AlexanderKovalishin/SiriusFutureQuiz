@@ -200,6 +200,8 @@ GameObject:
   - component: {fileID: 2099593026038500259}
   - component: {fileID: 2099593026038500253}
   - component: {fileID: 2099593026038500258}
+  - component: {fileID: 6269741276932340985}
+  - component: {fileID: 4831315155599993470}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -267,6 +269,40 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6269741276932340985
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099593026038500256}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 634e3b8655e3e154cbbf24874cb8f65b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4831315155599993470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099593026038500256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd48eb068c1a474ba56129defb8227c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerName: Restart
+  _defaultState: Play
 --- !u!1 &2099593026309177949
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +487,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099593026363063373}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
@@ -506,6 +542,7 @@ GameObject:
   - component: {fileID: 2099593026400740458}
   - component: {fileID: 2099593026400740459}
   - component: {fileID: 2099593026400740456}
+  - component: {fileID: 764113902864185893}
   m_Layer: 5
   m_Name: StartGameRunButton
   m_TagString: Untagged
@@ -616,6 +653,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &764113902864185893
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099593026400740462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d44907c6b5bd4ad41b811decbd1bb227, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2099593027184439209
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startGameButton: {fileID: 2099593026400740456}
   _clickAudio: {fileID: 1239618383973769392}
+  _intro: {fileID: 4831315155599993470}
 --- !u!1 &2099593027459371168
 GameObject:
   m_ObjectHideFlags: 0
