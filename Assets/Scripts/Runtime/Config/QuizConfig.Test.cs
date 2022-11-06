@@ -7,7 +7,7 @@ namespace SiriusFuture.Quiz.Config
     {
         public void TestParse()
         {
-            var words = _parserConfig.Parse(_text.text, _minWordLength);
+            var words = _parserConfig.Parse(_text.text, _minWordLength, _maxWordLength);
             var wordsText = new StringBuilder();
             foreach (var word in words)
             {

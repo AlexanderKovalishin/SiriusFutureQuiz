@@ -5,7 +5,7 @@ namespace SiriusFuture.Quiz.Core.Collections
 {
     public static class ListExtension
     {
-        private static readonly Random Random = new();
+        private static readonly Random Random = new(Guid.NewGuid().GetHashCode());
 
         public static void Shuffle<T>(this IList<T> list)
         {

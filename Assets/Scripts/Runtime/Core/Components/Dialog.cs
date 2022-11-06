@@ -17,10 +17,10 @@ namespace SiriusFuture.Quiz.Core.Components
         public async ValueTask<TResult> ShowDialog(TArgs args)
         {
             OnShow(args);
-            _animator.SetVisible(true);
+            _animator.SetValue(true);
             _completion = new TaskCompletionSource<TResult>();
             var result = await _completion.Task;
-            _animator.SetVisible(false);
+            _animator.SetValue(false);
             return result;
         }
 

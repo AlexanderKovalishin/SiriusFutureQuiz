@@ -7,7 +7,7 @@ namespace SiriusFuture.Quiz.Game
 {
     public class QuizMetaGameStartController : MonoBehaviour
     {
-        [SerializeField] private QuizMetaGameStartDialog _gameStartDialog;
+        [SerializeField] private UIQuizMetaGameStartDialog _gameStartDialog;
         public async ValueTask StartGame()
         {
             await _gameStartDialog.ShowDialog(VoidType.Empty);

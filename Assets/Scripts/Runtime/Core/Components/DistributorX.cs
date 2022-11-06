@@ -4,22 +4,15 @@ using UnityEngine;
 
 namespace SiriusFuture.Quiz.Core.Components
 {
-    public class DistributorX: MonoBehaviour
+    public class DistributorX: ChildrenTransformProcessor
     {
         [SerializeField] private float _distance = 1f;
 
-        private readonly List<Transform> _children = new();
-
-        public void Distribute()
+        public List<Transform> DistributeChildren()
         {
-            CacheChildren();
-            var totalLength = (_children.Count - 1) * _distance;
-            var position = totalLength * -0.5f;
-            foreach (var child in _children)
-            {
-                child.localPosition = child.localPosition.WithX(position);
-                position += _distance;
-            }
+            var children = CacheChildren();
+            Distribute(children);
+            return children;
         }
         
         public void Distribute<T>(IList<T> items) where T: Component
@@ -28,22 +21,14 @@ namespace SiriusFuture.Quiz.Core.Components
             var position = totalLength * -0.5f;
             foreach (var item in items)
             {
-                var itemTransform = item.transform; 
-                itemTransform.localPosition = itemTransform.localPosition.WithX(position);
+                ApplyItemTransform(item.transform, position);
                 position += _distance;
             }
         }
-        
-        private void CacheChildren()
+
+        private void ApplyItemTransform(Transform itemTransform, float position)
         {
-            _children.Clear();
-            var thisTransform = transform;
-            for (var i = 0; i < thisTransform.childCount; i++)
-            {
-                var child = thisTransform.GetChild(i);
-                if (!child.gameObject.activeInHierarchy) continue;
-                _children.Add(child);
-            }
+            itemTransform.localPosition = itemTransform.localPosition.WithX(position);
         }
     }
 }

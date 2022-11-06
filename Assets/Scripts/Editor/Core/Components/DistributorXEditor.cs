@@ -4,23 +4,17 @@ using UnityEngine;
 namespace SiriusFuture.Quiz.Core.Components
 {
     [CustomEditor(typeof(DistributorX))]
-    public class DistributorXEditor: Editor
+    public class DistributorXEditor: ChildrenTransformProcessorEditor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
             var distributor = (DistributorX)target;
  
-            if(GUILayout.Button("Test Distribute", GUILayout.Height(40)))
+            if(GUILayout.Button("Test Distribute X", GUILayout.Height(40)))
             {
-                distributor.Distribute();
-                
-                var transform = distributor.transform;
-                for (var i = 0; i < transform.childCount; i++)
-                {
-                    var child = transform.GetChild(i);
-                    EditorUtility.SetDirty(child);
-                }
+                var children = distributor.DistributeChildren();
+                SetItemsDirty(children);
             }
          
         }

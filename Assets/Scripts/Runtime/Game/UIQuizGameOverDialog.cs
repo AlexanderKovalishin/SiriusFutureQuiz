@@ -5,17 +5,16 @@ using UnityEngine.UI;
 
 namespace SiriusFuture.Quiz.Game
 {
-    public class QuizMetaGameStartDialog : Dialog<VoidType, VoidType>
+    public class UIQuizGameOverDialog : Dialog<VoidType, VoidType>
     {
-        [SerializeField] private Button _startGameButton;
+        [SerializeField] private Button _okButton;
 
         protected override void Awake()
         {
             base.Awake();
-            _startGameButton.onClick.AddListener(StartGameButtonOnClick);
+            _okButton.onClick.AddListener(OkButtonOnClick);
         }
-
-        private void StartGameButtonOnClick()
+        private void OkButtonOnClick()
         {
             Complete(VoidType.Empty);
         }

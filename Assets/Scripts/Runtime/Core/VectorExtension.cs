@@ -9,6 +9,11 @@ namespace SiriusFuture.Quiz.Core
             return new Vector3(x, p.y, p.z);
         }
 
+        public static Vector3 WithXY(this Vector3 p, float x, float y)
+        {
+            return new Vector3(x, y, p.z);
+        }
+
         public static Vector3 WithY(this Vector3 p, float y)
         {
             return new Vector3(p.x, y, p.z);

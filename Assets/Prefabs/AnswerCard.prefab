@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8442176990541667854}
   - component: {fileID: 8442176990541667853}
   - component: {fileID: 8442176990541667852}
+  - component: {fileID: 8536498560634282096}
+  - component: {fileID: 4221623397152850089}
+  - component: {fileID: 1809181285200055672}
   m_Layer: 0
   m_Name: AnswerCard
   m_TagString: Untagged
@@ -67,6 +70,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 8442176992423482543}
+  _animator: {fileID: 8536498560634282096}
+--- !u!114 &8536498560634282096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442176990541667855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c9716416ad49a781932edf5a430a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAnimator: {fileID: 4221623397152850089}
+  _openAnimator: {fileID: 1809181285200055672}
+--- !u!114 &4221623397152850089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442176990541667855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8eb49d98fab4dc2b64f9508de0ebbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boolParameter: Visible
+--- !u!114 &1809181285200055672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442176990541667855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8eb49d98fab4dc2b64f9508de0ebbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boolParameter: Opened
 --- !u!1 &8442176990741209604
 GameObject:
   m_ObjectHideFlags: 0

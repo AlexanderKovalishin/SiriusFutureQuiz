@@ -19,7 +19,7 @@ namespace SiriusFuture.Quiz.Core.Components
             for (var i = 0; i < _startCapacity; i++)
             {
                 var instance = _factory.Create();
-                instance.gameObject.SetActive(false);
+                //instance.gameObject.SetActive(false);
                 _inactiveInstances.Enqueue(instance);
             }
         }
@@ -29,7 +29,6 @@ namespace SiriusFuture.Quiz.Core.Components
             var instance = _inactiveInstances.Count == 0 
                 ? _factory.Create() 
                 : _inactiveInstances.Dequeue();
-            instance.gameObject.SetActive(true);
             _activeInstances.Add(instance);
             InvokeGetEvents(instance);
             return instance;
@@ -39,7 +38,6 @@ namespace SiriusFuture.Quiz.Core.Components
         {
             InvokeReturnEvents(instance);
             _activeInstances.Remove(instance);
-            instance.gameObject.SetActive(false);
             _inactiveInstances.Enqueue(instance);
         }
 
@@ -48,7 +46,6 @@ namespace SiriusFuture.Quiz.Core.Components
             foreach (var instance in _activeInstances)
             {
                 InvokeReturnEvents(instance);
-                instance.gameObject.SetActive(false);
                 _inactiveInstances.Enqueue(instance);
             }
             _activeInstances.Clear();

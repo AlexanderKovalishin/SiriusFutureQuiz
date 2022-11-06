@@ -10,13 +10,15 @@ namespace SiriusFuture.Quiz.Utils
         private readonly bool _toLower;
         private readonly Regex _regex;
         private readonly int _minWordLength;
+        private readonly int _maxWordLength;
         private readonly char[] _splitChars;
 
-        public UniqueWordsParser(string ignoreWordsPattern, bool toLower, int minWordLength, char[] splitChars)
+        public UniqueWordsParser(string ignoreWordsPattern, bool toLower, int minWordLength, int maxWordLength, char[] splitChars)
         {
             _regex = new Regex(ignoreWordsPattern, RegexOptions.Compiled);
             _toLower = toLower;
             _minWordLength = minWordLength;
+            _maxWordLength = maxWordLength;
             _splitChars = splitChars;
         }
 
@@ -31,6 +33,7 @@ namespace SiriusFuture.Quiz.Utils
             {
                 if (string.IsNullOrEmpty(word)) continue;
                 if (word.Length < _minWordLength) continue;
+                if (word.Length >= _maxWordLength) continue;
                 if (_regex.IsMatch(word)) continue;
                 if (wordsSet.Contains(word)) continue;
                 wordsSet.Add(word);
