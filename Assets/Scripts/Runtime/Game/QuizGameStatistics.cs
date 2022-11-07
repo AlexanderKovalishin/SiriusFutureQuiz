@@ -28,7 +28,7 @@ namespace SiriusFuture.Quiz.Game
         
         public void ReportVictory()
         {
-            Score += Attempts * 2;
+            Score += Attempts;
             Change?.Invoke();
         }
         
