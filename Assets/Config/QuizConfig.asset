@@ -15,7 +15,7 @@ MonoBehaviour:
   _minWordLength: 3
   _maxWordLength: 10
   _roundsCount: 5
-  _maxLettersCount: 32
+  _maxLettersCount: 26
   _attemptsCount: 10
   _text: {fileID: 4900000, guid: b1581f7c10a66244482a7d894ecefc16, type: 3}
   _parserConfig: {fileID: 11400000, guid: 722c36b015852a04185f05a2e0ef3cfc, type: 2}
