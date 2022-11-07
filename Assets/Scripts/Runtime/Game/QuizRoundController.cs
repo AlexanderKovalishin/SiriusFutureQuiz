@@ -33,13 +33,15 @@ namespace SiriusFuture.Quiz.Game
             else
             {
                 _lettersChooser.FailLetters(letterValue);
+                _gameStatistics.ReportFail();
+
                 if (!_gameStatistics.HasAttempts)
                 {
                     _raycaster.enabled = false;
                     _timeline.PosyDelayed(_completeRoundDelay, HideLettersChooser, QuizRoundCompleteStatus.Fail);
+                    return;
                 }
 
-                _gameStatistics.ReportFail();
             }
 
             if (_answer.IsComplete())
@@ -57,8 +59,7 @@ namespace SiriusFuture.Quiz.Game
             _answer.SetAnswer(word);
             _lettersChooser.CreateLetters(word, maxLettersCount);
             _completion = new TaskCompletionSource<QuizRoundResult>();
-            await _completion.Task;
-            return new QuizRoundResult(QuizRoundCompleteStatus.Success);
+            return await _completion.Task;
         }
 
         private void HideLettersChooser(QuizRoundCompleteStatus status)

@@ -30,7 +30,7 @@ namespace SiriusFuture.Quiz.Game
         private void StatisticsOnChange()
         {
             _scoreText.SetText(string.Format(_scoreFormat, _statistics.Score));
-            _attemptsText.SetText(string.Format(_attemptsFormat, _statistics.Attempts));
+            _attemptsText.SetText(string.Format(_attemptsFormat, Mathf.Max(_statistics.Attempts, 0)));
             _roundText.SetText(string.Format(_roundFormat, _statistics.RoundIndex + 1, _statistics.RoundsCount));
         }
     }
